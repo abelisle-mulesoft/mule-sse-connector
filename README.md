@@ -1,16 +1,22 @@
 # Mule SSE Connector
 
-This custom Mule 4 connector was explicitly created to act as a Server-Sent Events (SSE) client in the context of an ongoing consulting engagement. In the current revision, the implementation is limited to supporting a demo to showcase the art of the possible when powering Salesforce Agentforce with the MuleSoft Anypoint Platform to encapsulate the [Constructor Retrieve by intent API](https://docs.constructor.com/reference/v1-asa-retrieve-intent), an SSE endpoint. The current revision was created under tremendous pressure to deliver something quickly because of an urgent need. Consider this revision as a quick and dirty implementation that will be improved gradually over the next few weeks.
+This custom Mule 4 connector was developed to support an ongoing consulting engagement involving an Agentforce agent for searching products by intent via the [Retrieve by Intent API](https://docs.constructor.com/reference/v1-asa-retrieve-intent) from [Constructor](https://constructor.com/). The API returns results in small batches through a real-time Server-Sent Events (SSE) stream. Since Agentforce does not currently support direct SSE calls, this connector functions as the SSE client, handling the real-time stream from the Constructor API.
+
+The current revision was developed under tight deadlines to meet an urgent need. It should be considered a "quick and dirty" implementation, with planned improvements and refinements over the coming weeks.
 
 > [!CAUTION]
 >
-> The current revision represents a quick and dirty implementation. As examples:
+> As examples, this custom Mule 4 SSE connector:
 >
-> 1. It does not include proper error handling.
-> 2. It uses `System.out.println` and `System.err.println` instead of a more robust logger.
-> 3. It does not properly open, maintain, and close the connection to the SSE endpoint. Also, it does not implement the `SSEConnection` and `SSEConnectionProvider` classes.
-> 4. It uses a rudimentary algorithm to parse the SSE events and the lines they contain.
-> 5. It was installed in a local Maven repository instead of publishing it to Anypoint Exchange.
+> 1. Does not include proper error handling.
+> 2. Uses `System.out.println` and `System.err.println` instead of a more robust logger.
+> 3. Does not properly open, maintain, and close the connection to the SSE endpoint. Also, it does not implement the `SSEConnection` and `SSEConnectionProvider` classes.
+> 4. Uses a rudimentary algorithm to parse the SSE events and the lines they contain.
+> 5. Was installed in a local Maven repository instead of publishing it to Anypoint Exchange.
+
+## Getting Started
+
+If you are not familiar with the SSE specification, the Constructor Retrieve by Intent API, or both, please review the [SSE Fundamentals document](documentation/sse-fundamentals.md) first. This document provides a brief overview of the Server-Sent Events (SSE) specification and the Constructor's own implementation. Ultimately, this short overview should help you appreciate the underlying implementation of this custom Mule 4 SSE connector. 
 
 ## Installation Instructions
 
