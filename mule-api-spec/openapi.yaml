@@ -1,0 +1,201 @@
+openapi: 3.0.0
+info:
+  title: Product Information System API
+  description: >
+    The Product Information System API encapsulates and abstracts calling the Constructor "Retrieve
+    by Query" and "Retrieve by Intent" APIs, hiding some of the complexity (e.g., SSE), for example.
+    This system API embodies a reusable, composable asset that provides a single, agent-friendly API
+    surface for Salesforce and Agentforce.
+  contact:
+    name: Alan Belisle
+    email: abelisle@salesforce.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.1.3
+
+tags:
+- name: productInformation
+  description: Operations about product information
+
+x-sfdc:
+  agent:
+    topic:
+      name: WSI Product Information
+      classificationDescription: >
+        This API manages customer inquiries about product information, enabling them to search 
+        products via a simple query or an intent.
+      scope: >
+        Your job is to assist customers in finding product information based on their inquiry.
+      instructions:
+        - You can search for products based on a natural language query.
+        - You can retrieve products that match an expressed intent.
+        - You can provide AI-powered product recommendations that complement a search query.
+        - You must format and present the results clearly back to the customer.
+        - You must ask clarifying questions if the query or intent is ambiguous.
+        - You must not process payments, handle orders, or initiate transactions.
+        - You must not provide pricing guarantees, shipping, or stock availability outside of what is returned by the API.
+        - You must not answer unrelated questions not connected to product information.
+        - You must not modify or delete product data.
+        - You must not offer customer support beyond product discovery (e.g., troubleshooting, returns, or account management).
+
+servers:
+  - url: https://product-information-sapi-dev-2kraw.5sc6y6-4.usa-e2.cloudhub.io/
+    description: API server for the development environment
+
+paths:
+  /products/intent:
+    post:
+      tags:
+      - productInformation
+      summary: Get products by intent (2.1)
+      description: >
+        Get products by intent (using the Retrieve by intent API). If no result, retrieves products by query
+        instead (using the Retrieve by query API).
+      operationId: getProductsByIntent
+      x-sfdc:
+        agent:
+          action:
+            publishAsAgentAction: true
+      requestBody:
+        description: Describes the information or data required and optional for retrieving products by intent. 
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Request'
+              x-sfdc:
+                agent:
+                  action:
+                    isUserInput: true
+      responses:
+        '200':
+          description: Successful response with products
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductResponse'
+                x-sfdc:
+                  agent:
+                    action:
+                      isDisplayable: true
+
+  /products/search:
+    post:
+      tags:
+      - productInformation
+      summary: Search products by query (2.1)
+      description: Search products by query (facade to the Retrieve by query API)
+      operationId: searchProducts
+      x-sfdc:
+        agent:
+          action:
+            publishAsAgentAction: true
+      requestBody:
+        description: Describes the information or data required and optional for retrieving products by query.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Request'
+              x-sfdc:
+                agent:
+                  action:
+                    isUserInput: true
+      responses:
+        '200':
+          description: Successful response with products
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductResponse'
+                x-sfdc:
+                  agent:
+                    action:
+                      isDisplayable: true
+
+components:
+  schemas:
+    Request:
+      type: object
+      required:
+        - prompt
+      properties:
+        prompt:
+          type: string
+          description: >
+            The input query or intent used for product search and recommendations.
+          example: "I'm looking for a light under $150"
+      additionalProperties: false
+    ProductResponse:
+      type: object
+      description: Represents the response for a product search query.
+      properties:
+        searchType:
+          type: string
+          example: Query
+        products:
+          type: array
+          description: A list of products returned by the search
+          items:
+            $ref: '#/components/schemas/Product'
+      required:
+        - searchType
+        - products
+      additionalProperties: false
+
+    Product:
+      type: object
+      properties:
+        id:
+          type: string
+          example: florentine-sconce
+        title:
+          type: string
+          example: Florentine Sconce
+        image_url:
+          type: string
+          example: https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202524/0012/img12c.jpg
+        leaderSku:
+          type: integer
+          example: 5794125
+        leaderSkuImage:
+          type: string
+          example: https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202524/0012/img12c.jpg
+        group_ids:
+          type: array
+          items:
+            type: string
+            example: wall-sconces
+        description:
+          type: string
+          example: Create an elegant statement with Florentine.
+        productPriceType:
+          type: string
+          example: Regular
+        lowestPrice:
+          type: number
+          example: 399
+        highestPrice:
+          type: number
+          example: 549
+        salePriceMax:
+          type: number
+          example: 549
+        salePriceMin:
+          type: number
+          example: 399
+        regularPriceMin:
+          type: number
+          example: 399
+        regularPriceMax:
+          type: number
+          example: 549
+        value:
+          type: string
+          example: ""
+        url:
+          type: string
+          example: https://www.rejuvenation.com/products/florentine-sconce/
+      additionalProperties: false
+
