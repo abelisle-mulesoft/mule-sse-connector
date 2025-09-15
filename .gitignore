@@ -29,3 +29,7 @@ muleEmbeddedDB/
 objectstore/
 temp/
 testdir/
+
+# Custom
+**/*.orig
+_private/
