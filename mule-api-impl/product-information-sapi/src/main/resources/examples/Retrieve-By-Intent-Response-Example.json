@@ -1,0 +1,271 @@
+[
+  {
+    "data": {
+      "intent_result_id": "9aea8ff4-3372-47f4-8d0f-814dcbc52b98",
+      "thread_id": "1e856449-b929-4279-a610-a3202e01dd63",
+      "request": {
+        "intent": "I'm+looking+for+a+light+under+$150",
+        "query_params": {
+          "key": "key_bvtZwrAmLzWlq0gA",
+          "thread_id": "1e856449-b929-4279-a610-a3202e01dd63",
+          "domain": "explorer",
+          "guard": false
+        }
+      }
+    },
+    "id": null,
+    "event": "start"
+  },
+  {
+    "data": {
+      "intent_result_id": "9aea8ff4-3372-47f4-8d0f-814dcbc52b98",
+      "thread_id": "1e856449-b929-4279-a610-a3202e01dd63",
+      "text": "Brighten your space without breaking the bank! Here are some lighting options under $150 to add style and function to your home."
+    },
+    "id": null,
+    "event": "message"
+  },
+  {
+    "data": {
+      "intent_result_id": "9aea8ff4-3372-47f4-8d0f-814dcbc52b98",
+      "thread_id": "1e856449-b929-4279-a610-a3202e01dd63",
+      "result_id": "6a92a6d4-3754-4894-beec-6494b1941eb5",
+      "title": "Affordable Lighting",
+      "response": {
+        "search_request": {
+          "display_name": "Affordable Lighting",
+          "search_term": "lighting under 150",
+          "params": {
+            
+          }
+        },
+        "alternative_search_requests": [
+          
+        ],
+        "results": [
+          {
+            "value": "Blaine 16\" Pendant",
+            "matched_terms": [
+              
+            ],
+            "data": {
+              "id": "blaine-16-pendant",
+              "url": "https://www.rejuvenation.com/products/blaine-16-pendant/",
+              "image_url": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202514/0008/blaine-16-pendant-1-i.jpg",
+              "variation_id": "blaine-16-pendant-pseudo",
+              "facets": [
+                {
+                  "name": "store_ids",
+                  "values": [
+                    "ONLINE"
+                  ]
+                }
+              ],
+              "flags": [
+                "bestseller"
+              ],
+              "title": "Blaine 16\" Pendant",
+              "pipType": "configured",
+              "leaderSku": 3721430,
+              "altImages": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202533/0002/blaine-16-pendant-3-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202533/0002/blaine-16-pendant-4-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202533/0002/blaine-16-pendant-1-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202533/0002/blaine-16-pendant-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202533/0002/blaine-16-pendant-2-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202514/0008/blaine-16-pendant-c.jpg",
+              "lowestPrice": 499,
+              "description": "Our Blaine Pendant features a glass shade that supports an elegant, angled metal shade—casting a warm glow both above and below the fixture. With a contemporary design, Blaine adds a modern touch to kitchens and dining nooks. Made to order and finished by hand at our factory in Portland, Oregon, using the finest domestic and imported components, Blaine is available in several sizes and finishes with painted shade color options. Details You'll Appreciate Mid-Century Modern-inspired design Unique construction provides ample uplight and downlight Made at our Portland factory from domestic and imported parts Product Specifications Brass fixture Brass or painted aluminum shade paired with an opal glass shade Hardwired; professional installation recommended Conforms to UL standards—this product is rated for use in damp environments Assembled in the USA of domestic and imported parts Care Instructions Wipe clean with a soft, dry cloth or static duster Always avoid the use of harsh chemicals o",
+              "hoverImages": "pendants|https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202514/0008/blaine-16-pendant-c.jpg;all-ceiling-lighting|https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202514/0008/blaine-16-pendant-c.jpg;custom-made-lighting|https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202514/0008/blaine-16-pendant-c.jpg;shop-all-lighting|https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202514/0008/blaine-16-pendant-c.jpg;kitchen-island-lighting|https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202514/0008/blaine-16-pendant-c.jpg;kitchen-lighting|https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202514/0008/blaine-16-pendant-c.jpg",
+              "highestPrice": 769,
+              "salePriceMin": 499,
+              "swatchPrices": "6605403;769.00;769.00;769.00;769.00;Regular~688166;549.00;549.00;549.00;549.00;Regular~6781582;549.00;549.00;549.00;549.00;Regular~5333222;549.00;549.00;549.00;549.00;Regular~8469474;769.00;769.00;769.00;769.00;Regular~1424895;499.00;549.00;499.00;549.00;Regular~1084178;499.00;499.00;499.00;499.00;Regular~8648596;499.00;499.00;499.00;499.00;Regular",
+              "salePriceMax": 769,
+              "imageOverride": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202514/0008/blaine-16-pendant-1-i.jpg",
+              "imageRollOvers": "pendants;all-ceiling-lighting;custom-made-lighting;shop-all-lighting;kitchen-island-lighting;kitchen-lighting",
+              "leaderSkuImage": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202530/0006/img43c.jpg",
+              "regularPriceMin": 499,
+              "swatchesDisplay": "6605403;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202535/0004/img392b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0003/img257c.jpg;Aged Brass~688166;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202528/0007/img206b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0041/img234c.jpg;Matte Oyster~6781582;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202534/0003/img262b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0003/img179c.jpg;MatteDarkSlate~5333222;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202534/0003/img16b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0004/img386c.jpg;MatteDoveGrey~8469474;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202532/0004/img403b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0005/img7c.jpg;Oil-Rubbed Bronze with Brushed Brass~1424895;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202534/0005/img165b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202514/0003/img402c.jpg;MatteRosemary~1084178;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202535/0006/img117b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0004/img115c.jpg;Oil-Rubbed Bronze~8648596;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202534/0003/img214b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0003/img223c.jpg;MatteWhite",
+              "regularPriceMax": 769,
+              "productPriceType": "Regular",
+              "thumb_image_parent": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202514/0008/blaine-16-pendant-1-i.jpg",
+              "eligibleForQuickBuy": false,
+              "group_ids": [
+                "pendants",
+                "contract-grade-shop-all",
+                "white-lighting",
+                "custom-made-lighting",
+                "kitchen-island-lighting",
+                "bestsellers-lighting",
+                "in-stock-items",
+                "all-ceiling-lighting",
+                "kitchen-lighting",
+                "shop-all-lighting",
+                "in-stock-lighting",
+                "grey-lighting",
+                "bestsellers-kitchen",
+                "dining-room-project-guide",
+                "color-lighting",
+                "bestsellers-shop-all",
+                "black-lighting",
+                "bedroom-essentials",
+                "bring-color-home",
+                "contract-grade-lighting",
+                "portland-assembled",
+                "assembled-in-the-usa",
+                "green-lighting",
+                "blaine-lighting-collection",
+                "contract-grade",
+                "blue-lighting"
+              ]
+            },
+            "is_slotted": false,
+            "labels": {
+              
+            }
+          },
+          {
+            "value": "Dekum 16\" Pendant, Metal Shade",
+            "matched_terms": [
+              
+            ],
+            "data": {
+              "id": "dekum-16-metal-dome-pendant",
+              "url": "https://www.rejuvenation.com/products/dekum-16-metal-dome-pendant/",
+              "image_url": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0009/dekum-16-pendant-metal-shade-1-i.jpg",
+              "variation_id": "dekum-16-metal-dome-pendant-pseudo",
+              "facets": [
+                {
+                  "name": "store_ids",
+                  "values": [
+                    "ONLINE"
+                  ]
+                }
+              ],
+              "flags": [
+                "bestseller"
+              ],
+              "title": "Dekum 16\" Pendant, Metal Shade",
+              "pipType": "configured",
+              "leaderSku": 1127301,
+              "altImages": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202533/0002/dekum-16-pendant-metal-shade-2-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202533/0002/dekum-16-pendant-metal-shade-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0039/dekum-16-pendant-metal-shade-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0002/dekum-16-pendant-metal-shade-2-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202518/0002/dekum-16-pendant-metal-shade-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0011/dekum-16-pendant-metal-shade-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0002/dekum-16-pendant-metal-shade-3-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202518/0003/dekum-16-pendant-metal-shade-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202533/0002/dekum-16-pendant-metal-shade-1-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0002/dekum-16-pendant-metal-shade-1-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0009/dekum-16-pendant-metal-shade-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0006/dekum-11-pendant-metal-shade-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0009/dekum-16-pendant-metal-shade-c.jpg",
+              "thumb_image": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0009/dekum-16-pendant-metal-shade-1-i.jpg",
+              "description": "An elegant interpretation of industrial-style pendants, Dekum features exposed details and a Mid-Century-inspired metal shade. A delicately curved solid brass fixture suspends the shade around an exposed bulb, illuminating the shade's interior as well as the fitter above. Choose your finish, length, and shade to create a look that’s completely unique to you. Details You'll Appreciate Beautiful spun brass shade Streamlined industrial-inspired fixture Subtle exposed bulb at the top of the shade Assembled to order at our Portland, Oregon factory Product Specifications Brass fixture; spun brass shade Hardwired; professional installation recommended Conforms to UL standards—this product is rated for use in damp environments Assembled in the USA of domestic and imported parts Care Instructions Wipe clean with a soft, dry cloth or static duster Always avoid the use of harsh chemicals or abrasive cleaners as they may cause damage to the fixture's finish Warning: This product can expose you to",
+              "hoverImages": "pendants|https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0009/dekum-16-pendant-metal-shade-c.jpg;all-ceiling-lighting|https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0009/dekum-16-pendant-metal-shade-c.jpg;custom-made-lighting|https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0009/dekum-16-pendant-metal-shade-c.jpg;shop-all-lighting|https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0009/dekum-16-pendant-metal-shade-c.jpg;kitchen-island-lighting|https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0009/dekum-16-pendant-metal-shade-c.jpg;kitchen-lighting|https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0009/dekum-16-pendant-metal-shade-c.jpg;kitchen-project-guide|https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0009/dekum-16-pendant-metal-shade-c.jpg",
+              "lowestPrice": 879,
+              "salePriceMax": 999,
+              "salePriceMin": 879,
+              "highestPrice": 999,
+              "swatchPrices": "1127301;999.00;999.00;999.00;999.00;Regular~7042176;999.00;999.00;999.00;999.00;Regular~3124247;999.00;999.00;999.00;999.00;Regular~4042517;999.00;999.00;999.00;999.00;Regular~8844572;879.00;879.00;879.00;879.00;Regular~8311398;999.00;999.00;999.00;999.00;Regular~7290719;999.00;999.00;999.00;999.00;Regular~4750338;999.00;999.00;999.00;999.00;Regular",
+              "imageRollOvers": "pendants;all-ceiling-lighting;custom-made-lighting;shop-all-lighting;kitchen-island-lighting;kitchen-lighting;kitchen-project-guide",
+              "leaderSkuImage": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202516/0033/img45c.jpg",
+              "swatchesDisplay": "1127301;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202535/0004/img392b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202516/0033/img45c.jpg;Aged Brass~7042176;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202534/0003/img441b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202532/0003/img178c.jpg;MatteBlack~3124247;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202528/0005/img264b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0043/img195c.jpg;Matte Juniper~4042517;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202534/0003/img262b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0024/img291c.jpg;MatteDarkSlate~8844572;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202534/0005/img51b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202532/0004/img148c.jpg;GlossThunderBlue~8311398;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202534/0003/img214b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202532/0004/img407c.jpg;MatteWhite~7290719;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202535/0006/img117b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202532/0004/img170c.jpg;Oil-Rubbed Bronze~4750338;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202534/0003/img435b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202532/0002/img164c.jpg;GlossRosemary",
+              "regularPriceMax": 999,
+              "regularPriceMin": 879,
+              "productPriceType": "Regular",
+              "thumb_image_parent": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0009/dekum-16-pendant-metal-shade-1-i.jpg",
+              "eligibleForQuickBuy": false,
+              "group_ids": [
+                "black-lighting",
+                "bestsellers-kitchen",
+                "assembled-in-the-usa",
+                "kitchen-lighting",
+                "contract-grade-shop-all",
+                "vault-mount-compatible",
+                "bedroom-essentials",
+                "kitchen-project-guide",
+                "dining-room-project-guide",
+                "bestsellers-shop-all",
+                "pendants",
+                "shop-all-lighting",
+                "custom-made-lighting",
+                "contract-grade-lighting",
+                "red-lighting",
+                "bring-color-home",
+                "in-stock-lighting",
+                "green-lighting",
+                "color-lighting",
+                "portland-assembled",
+                "white-lighting",
+                "blue-lighting",
+                "all-ceiling-lighting",
+                "in-stock-items",
+                "bestsellers-lighting",
+                "kitchen-island-lighting",
+                "in-stock-kitchen",
+                "contract-grade"
+              ]
+            },
+            "is_slotted": false,
+            "labels": {
+              
+            }
+          }
+        ]
+      },
+      "request": {
+        "sort_by": "relevance",
+        "sort_order": "descending",
+        "num_results_per_page": 20,
+        "filters": {
+          "group_id": [
+            "pendants"
+          ]
+        },
+        "skip_learning": true,
+        "blacklist_rules": true,
+        "term": "pendant lights under 150",
+        "page": 1,
+        "fmt_options": {
+          "groups_start": "current",
+          "groups_max_depth": 1,
+          "show_hidden_facets": false,
+          "show_hidden_fields": false,
+          "show_protected_facets": false
+        },
+        "section": "Products",
+        "features": {
+          "query_items": true,
+          "a_a_test": true,
+          "auto_generated_refined_query_rules": true,
+          "manual_searchandizing": true,
+          "personalization": true,
+          "filter_items": true,
+          "use_reranker_service_for_search": true,
+          "use_reranker_service_for_browse": true,
+          "use_reranker_service_for_all": false,
+          "custom_autosuggest_ui": false,
+          "disable_test_only_global_rules_search": false,
+          "disable_test_only_global_rules_browse": false,
+          "use_enriched_attributes_as_fuzzy_searchable": false
+        },
+        "feature_variants": {
+          "query_items": "query_items_ctr_and_l2r",
+          "a_a_test": null,
+          "auto_generated_refined_query_rules": "default_rules",
+          "manual_searchandizing": null,
+          "personalization": "default_personalization",
+          "filter_items": "filter_items_w_atcs_and_purchases",
+          "use_reranker_service_for_search": "search_reranker_v0_top100",
+          "use_reranker_service_for_browse": "browse_reranker_v0_top100",
+          "use_reranker_service_for_all": null,
+          "custom_autosuggest_ui": null,
+          "disable_test_only_global_rules_search": null,
+          "disable_test_only_global_rules_browse": null,
+          "use_enriched_attributes_as_fuzzy_searchable": null
+        },
+        "filter_match_types": {
+          "group_id": "any"
+        },
+        "searchandized_items": {
+          
+        }
+      }
+    },
+    "id": null,
+    "event": "search_result"
+  },
+  {
+    "data": {
+      "intent_result_id": "9aea8ff4-3372-47f4-8d0f-814dcbc52b98",
+      "thread_id": "1e856449-b929-4279-a610-a3202e01dd63",
+      "search_result_count": 4
+    },
+    "id": null,
+    "event": "end"
+  }
+]

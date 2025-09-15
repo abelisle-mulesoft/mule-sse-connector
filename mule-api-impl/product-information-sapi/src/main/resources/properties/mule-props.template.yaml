@@ -1,0 +1,40 @@
+#===================================================================================================
+# Mule Application Properties Template
+#===================================================================================================
+env:
+  name: ""
+
+
+#---------------------------------------------------------------------------------------------------
+# HTTP Listener on CloudHub
+http_listener:  # Comnmon to HTTP and HTTPS
+  host: "0.0.0.0"
+
+http:
+  port: "8081"
+https:
+  port: "8082"
+
+
+#---------------------------------------------------------------------------------------------------
+# API Autodiscovery Configuration
+autodiscovery:
+  api_id:       ""
+  flow_name:    ""
+
+  
+#---------------------------------------------------------------------------------------------------
+# Constructor API Configuration
+constructor:
+  key:            ""
+  search:
+    query:
+      host:       "ac.cnstrc.com"
+      port:       ""        # Use default port number
+      base_path:  "/"
+      path:       "/v1/search/"
+  intent:
+    query:
+      base_url:   "https://agent.cnstrc.com"
+      path:       "/v1/intent/"
+      domain:     ""

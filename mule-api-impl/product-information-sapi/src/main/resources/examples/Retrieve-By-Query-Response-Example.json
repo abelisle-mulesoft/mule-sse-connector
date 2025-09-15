@@ -1,0 +1,607 @@
+{
+    "response": {
+        "result_sources": {
+            "token_match": {
+                "count": 0
+            },
+            "embeddings_match": {
+                "count": 20
+            }
+        },
+        "facets": [
+            {
+                "display_name": "Sale",
+                "name": "priceType",
+                "type": "multiple",
+                "options": [
+                    {
+                        "status": "",
+                        "count": 20,
+                        "display_name": "Regular",
+                        "value": "Regular",
+                        "data": {}
+                    }
+                ],
+                "hidden": false,
+                "data": {}
+            }
+        ],
+        "groups": [
+            {
+                "group_id": "all",
+                "display_name": "All",
+                "count": 20,
+                "data": {},
+                "children": [
+                    {
+                        "group_id": "new-and-featured",
+                        "display_name": "New and Featured",
+                        "count": 20,
+                        "data": {},
+                        "children": [],
+                        "parents": [
+                            {
+                                "display_name": "All",
+                                "group_id": "all"
+                            }
+                        ]
+                    }
+                ],
+                "parents": []
+            }
+        ],
+        "results": [
+            {
+                "matched_terms": [],
+                "labels": {},
+                "data": {
+                    "id": "florentine-sconce",
+                    "url": "https://www.rejuvenation.com/products/florentine-sconce/",
+                    "flags": [
+                        "newcore"
+                    ],
+                    "title": "Florentine Sconce",
+                    "pipType": "simple-buy",
+                    "newcore": true,
+                    "leaderSku": 5794125,
+                    "image_url": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202524/0012/img12c.jpg",
+                    "altImages": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202516/0007/florentine-sconce-2-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202516/0008/florentine-sconce-2-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202516/0008/florentine-sconce-3-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202516/0008/florentine-sconce-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202516/0006/florentine-sconce-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202516/0006/florentine-sconce-1-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202521/0005/florentine-sconce-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202524/0012/florentine-sconce-1-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202524/0012/florentine-sconce-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202516/0007/florentine-sconce-3-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202516/0007/florentine-sconce-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202516/0005/florentine-sconce-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202524/0012/florentine-sconce-2-c.jpg",
+                    "description": "Create an elegant statement with Florentine. A cylindric glass or alabaster shade hangs from a solid brass fixture in your choice of finish—showcasing illumination through unique, architectural detail. Details You'll Appreciate Exclusive in-house design Sculptural silhouette Made to order by skilled craftspeople at our Portland, Oregon factory Product Specifications Solid brass fixture Glass or alabaster shade Due to the natural composition of alabaster, each shade will vary slightly Hardwired; professional installation recommended Conforms to UL standards—this product is rated for use in damp environments Glass shade is assembled in the USA of domestic and imported parts Care Instructions Wipe clean with a soft, dry cloth or static duster Always avoid the use of harsh chemicals or abrasive cleaners as they may cause damage to the fixture's finish Warning: This product can expose you to chemicals including lead, which are known to the State of California to cause cancer and birth defec",
+                    "lowestPrice": 399,
+                    "swatchPrices": "5794125;399.00;549.00;399.00;549.00;Regular~4165409;399.00;549.00;399.00;549.00;Regular~7120240;399.00;549.00;399.00;549.00;Regular~4869500;399.00;549.00;399.00;549.00;Regular~9234692;399.00;549.00;399.00;549.00;Regular~2800207;399.00;549.00;399.00;549.00;Regular~3199414;399.00;549.00;399.00;549.00;Regular",
+                    "salePriceMin": 399,
+                    "salePriceMax": 549,
+                    "highestPrice": 549,
+                    "imageRollOvers": "custom-made-lighting;shop-all-lighting;kitchen-lighting;kitchen-project-guide",
+                    "leaderSkuImage": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202524/0012/img12c.jpg",
+                    "regularPriceMin": 399,
+                    "regularPriceMax": 549,
+                    "swatchesDisplay": "5794125;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202535/0004/img392b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202524/0012/img12c.jpg;Aged Brass~4165409;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202535/0005/img40b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202524/0012/img16c.jpg;Brushed Nickel~7120240;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0029/img498b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202524/0012/img1c.jpg;Heritage Brass~4869500;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202535/0004/img403b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202524/0012/img9c.jpg;Lacquered Brass~9234692;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202535/0006/img117b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202516/0011/img388c.jpg;Oil-Rubbed Bronze~2800207;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202535/0008/img42b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202524/0012/img5c.jpg;Polished Nickel~3199414;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202535/0007/img127b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202524/0012/img9c.jpg;Unlacquered Brass",
+                    "productPriceType": "Regular",
+                    "eligibleForQuickBuy": true,
+                    "facets": [
+                        {
+                            "name": "avlIn12WPlusPL",
+                            "values": [
+                                999999
+                            ]
+                        },
+                        {
+                            "name": "store_ids",
+                            "values": [
+                                "ONLINE"
+                            ]
+                        }
+                    ],
+                    "group_ids": [
+                        "wall-sconces",
+                        "contract-grade-lighting",
+                        "wall-lighting",
+                        "florentine-lighting-collection",
+                        "contract-grade-bath",
+                        "heritage-brass",
+                        "shop-all-lighting",
+                        "shop-all-bath",
+                        "kitchen-lighting",
+                        "kitchen-wall-lighting",
+                        "kitchen-project-guide",
+                        "statement-heritage-brass",
+                        "custom-made-lighting",
+                        "contract-grade",
+                        "in-stock-items",
+                        "all-bath-lighting",
+                        "in-stock-lighting",
+                        "bath-sconces-bath",
+                        "in-stock-kitchen",
+                        "in-stock-bath"
+                    ],
+                    "variation_id": "florentine-sconce-pseudo"
+                },
+                "value": "Florentine Sconce",
+                "is_slotted": false
+            },
+            {
+                "matched_terms": [],
+                "labels": {},
+                "data": {
+                    "id": "lilith-chandelier",
+                    "url": "https://www.rejuvenation.com/products/lilith-chandelier/",
+                    "title": "Lilith Chandelier",
+                    "flags": [
+                        "bestseller",
+                        "inHome"
+                    ],
+                    "pipType": "simple-buy",
+                    "image_url": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0006/lilith-chandelier-i.jpg",
+                    "leaderSku": 902043,
+                    "altImages": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202528/0008/lilith-chandelier-4-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202528/0008/lilith-chandelier-2-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202518/0002/lilith-chandelier-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0039/lilith-chandelier-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202528/0008/lilith-chandelier-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202528/0008/lilith-chandelier-1-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202528/0008/lilith-chandelier-3-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202528/0009/lilith-chandelier-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202528/0009/lilith-chandelier-1-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0006/lilith-chandelier-1-c.jpg",
+                    "description": "Inspired by European candelabra chandeliers, Lilith is a beautifully updated approach to a timeless silhouette. Swooping solid brass arms reach out to expand light across your entry, living room, or dining table, ending in ornamental floral bobéches that are topped with shades made of fine linen. Supported by a canopy with textural detailing, our chandelier will add functional elegance to any room in your home. Details You'll Appreciate Inspired by Art Nouveau designs of the early 1900s Ornamental bobéches reference decorative plates that catch candlewax on traditional chandelier designs Choose your finish and length—and we’ll build your light to fit the exact needs of your space Complete your look with our Lilith Lighting Collection Product Specifications Brass fixture Linen shade Conforms to UL standards—this product is rated for use in damp environments Hardwired; professional installation recommended Imported Care Instructions Do not use abrasive pads or abrasive cleaning agents as",
+                    "lowestPrice": 1099,
+                    "hoverImages": "chandeliers|https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0006/lilith-chandelier-1-c.jpg",
+                    "salePriceMin": 1099,
+                    "swatchPrices": "902043;1099.00;1499.00;1099.00;1499.00;Regular~8188645;1099.00;1499.00;1099.00;1499.00;Regular",
+                    "highestPrice": 1499,
+                    "salePriceMax": 1499,
+                    "imageOverride": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0006/lilith-chandelier-i.jpg",
+                    "imageRollOvers": "chandeliers;all-ceiling-lighting;shop-all-lighting;kitchen-island-lighting;kitchen-lighting",
+                    "leaderSkuImage": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202528/0009/img97c.jpg",
+                    "regularPriceMax": 1499,
+                    "swatchesDisplay": "902043;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202535/0004/img392b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202528/0009/img97c.jpg;Aged Brass~8188645;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202535/0006/img117b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202528/0011/img289c.jpg;Oil-Rubbed Bronze",
+                    "facets": [
+                        {
+                            "name": "avlIn10WPL",
+                            "values": [
+                                144
+                            ]
+                        },
+                        {
+                            "name": "avlIn12WPL",
+                            "values": [
+                                144
+                            ]
+                        },
+                        {
+                            "name": "avlIn12WPlusPL",
+                            "values": [
+                                224
+                            ]
+                        },
+                        {
+                            "name": "avlIn2WPL",
+                            "values": [
+                                124
+                            ]
+                        },
+                        {
+                            "name": "avlIn4WPL",
+                            "values": [
+                                124
+                            ]
+                        },
+                        {
+                            "name": "avlIn6WPL",
+                            "values": [
+                                124
+                            ]
+                        },
+                        {
+                            "name": "avlIn8WPL",
+                            "values": [
+                                136
+                            ]
+                        },
+                        {
+                            "name": "avlNowPL",
+                            "values": [
+                                124
+                            ]
+                        },
+                        {
+                            "name": "store_ids",
+                            "values": [
+                                "ONLINE"
+                            ]
+                        }
+                    ],
+                    "regularPriceMin": 1099,
+                    "productPriceType": "Regular",
+                    "thumb_image_parent": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0006/lilith-chandelier-i.jpg",
+                    "eligibleForQuickBuy": true,
+                    "group_ids": [
+                        "lilith-lighting-collection",
+                        "bestsellers-shop-all",
+                        "all-ceiling-lighting",
+                        "in-stock-items",
+                        "chandeliers",
+                        "kitchen-lighting",
+                        "contract-grade-lighting",
+                        "bestsellers-kitchen",
+                        "shop-all-lighting",
+                        "kitchen-island-lighting",
+                        "contract-grade",
+                        "in-stock-lighting",
+                        "bestsellers-lighting"
+                    ],
+                    "variation_id": "lilith-chandelier-pseudo"
+                },
+                "value": "Lilith Chandelier",
+                "is_slotted": false
+            },
+            {
+                "matched_terms": [],
+                "labels": {},
+                "data": {
+                    "id": "conical-pendant",
+                    "url": "https://www.rejuvenation.com/products/conical-pendant/",
+                    "flags": [
+                        "bestseller"
+                    ],
+                    "title": "Conical Pendant",
+                    "pipType": "simple-buy",
+                    "image_url": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202520/0002/conical-pendant-1-i.jpg",
+                    "leaderSku": 7765908,
+                    "altImages": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202516/0008/conical-pendant-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0038/conical-pendant-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0039/conical-pendant-4-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0037/conical-pendant-1-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202520/0002/conical-pendant-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0037/conical-pendant-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0039/conical-pendant-1-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0035/conical-pendant-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0064/conical-pendant-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0039/conical-pendant-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0039/conical-pendant-2-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0037/conical-pendant-2-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0038/conical-pendant-1-c.jpg",
+                    "minAvlNowPL": 50,
+                    "description": "Make a statement with Conical—featuring lofty lines, a drum silhouette, and refined linen shade. Details You'll Appreciate Mildew-resistant linen shade paired with diffuser provides balanced, ambient light Available in several sizes Product Specifications Mildew-resistant linen shade; aged brass fixture features brass components; oil-rubbed bronze fixture features steel components Hardwired; professional installation recommended Conforms to UL standards—this product is rated for use in dry environments Imported Care Instructions Wipe clean with a soft, dry cloth or static duster Always avoid the use of harsh chemicals or abrasive cleaners as they may cause damage to the fixture's finish Warning: This product can expose you to chemicals including lead, which are known to the State of California to cause cancer and birth defects or other reproductive harm. For more information go to www.P65warnings.ca.gov",
+                    "lowestPrice": 475,
+                    "productBlurb": "Our Conical Drum Pendants make a big statement in spaces large and small. Lofty lines and a linen shade add a casual, breezy look, balancing its size and making it ideal above islands, dining spaces, and corner kitchenettes. Great on its own or in multiples, Conical is customizable with a sand, white, or black linen shade.",
+                    "highestPrice": 1049,
+                    "salePriceMin": 475,
+                    "salePriceMax": 1049,
+                    "swatchPrices": "7765908;629.00;1049.00;629.00;1049.00;Regular~9110228;475.00;580.00;679.00;829.00;Discount~7787301;629.00;1049.00;629.00;1049.00;Regular~3668876;475.00;580.00;679.00;829.00;Discount",
+                    "imageOverride": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202520/0002/conical-pendant-1-i.jpg",
+                    "leaderSkuImage": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202528/0014/img404c.jpg",
+                    "imageRollOvers": "chandeliers",
+                    "facets": [
+                        {
+                            "name": "avlIn10WPL",
+                            "values": [
+                                260
+                            ]
+                        },
+                        {
+                            "name": "avlIn12WPL",
+                            "values": [
+                                260
+                            ]
+                        },
+                        {
+                            "name": "avlIn12WPlusPL",
+                            "values": [
+                                260
+                            ]
+                        },
+                        {
+                            "name": "avlIn2WPL",
+                            "values": [
+                                260
+                            ]
+                        },
+                        {
+                            "name": "avlIn4WPL",
+                            "values": [
+                                260
+                            ]
+                        },
+                        {
+                            "name": "avlIn6WPL",
+                            "values": [
+                                260
+                            ]
+                        },
+                        {
+                            "name": "avlIn8WPL",
+                            "values": [
+                                260
+                            ]
+                        },
+                        {
+                            "name": "avlNowPL",
+                            "values": [
+                                260
+                            ]
+                        },
+                        {
+                            "name": "store_ids",
+                            "values": [
+                                "ONLINE"
+                            ]
+                        }
+                    ],
+                    "regularPriceMax": 1049,
+                    "regularPriceMin": 629,
+                    "swatchesDisplay": "7765908;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202527/0012/img424b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202528/0014/img404c.jpg;Oil-Rubbed Bronze with White Shade~9110228;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202527/0031/img136b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202528/0009/img315c.jpg;Oil-Rubbed Bronze with Sand Shade~7787301;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202527/0014/img319b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202527/0013/img28c.jpg;Aged Brass White Shades~3668876;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202527/0009/img170b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202527/0031/img159c.jpg;Aged Brass with Sand Shade",
+                    "productPriceType": "Discount",
+                    "maxDiscountPercent": 30,
+                    "thumb_image_parent": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202520/0002/conical-pendant-1-i.jpg",
+                    "eligibleForQuickBuy": true,
+                    "group_ids": [
+                        "sale-lighting",
+                        "chandeliers",
+                        "conical",
+                        "bestsellers-shop-all",
+                        "sale-all",
+                        "bestsellers-lighting",
+                        "in-stock-items"
+                    ],
+                    "variation_id": "conical-pendant-pseudo"
+                },
+                "value": "Conical Pendant",
+                "is_slotted": false
+            },
+            {
+                "matched_terms": [],
+                "labels": {},
+                "data": {
+                    "id": "blaine-16-pendant",
+                    "url": "https://www.rejuvenation.com/products/blaine-16-pendant/",
+                    "title": "Blaine 16\" Pendant",
+                    "flags": [
+                        "bestseller"
+                    ],
+                    "pipType": "configured",
+                    "image_url": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202514/0008/blaine-16-pendant-1-i.jpg",
+                    "leaderSku": 3721430,
+                    "altImages": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202533/0002/blaine-16-pendant-3-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202533/0002/blaine-16-pendant-4-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202533/0002/blaine-16-pendant-1-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202533/0002/blaine-16-pendant-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202533/0002/blaine-16-pendant-2-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202514/0008/blaine-16-pendant-c.jpg",
+                    "description": "Our Blaine Pendant features a glass shade that supports an elegant, angled metal shade—casting a warm glow both above and below the fixture. With a contemporary design, Blaine adds a modern touch to kitchens and dining nooks. Made to order and finished by hand at our factory in Portland, Oregon, using the finest domestic and imported components, Blaine is available in several sizes and finishes with painted shade color options. Details You'll Appreciate Mid-Century Modern-inspired design Unique construction provides ample uplight and downlight Made at our Portland factory from domestic and imported parts Product Specifications Brass fixture Brass or painted aluminum shade paired with an opal glass shade Hardwired; professional installation recommended Conforms to UL standards—this product is rated for use in damp environments Assembled in the USA of domestic and imported parts Care Instructions Wipe clean with a soft, dry cloth or static duster Always avoid the use of harsh chemicals o",
+                    "lowestPrice": 499,
+                    "hoverImages": "pendants|https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202514/0008/blaine-16-pendant-c.jpg;all-ceiling-lighting|https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202514/0008/blaine-16-pendant-c.jpg;custom-made-lighting|https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202514/0008/blaine-16-pendant-c.jpg;shop-all-lighting|https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202514/0008/blaine-16-pendant-c.jpg;kitchen-island-lighting|https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202514/0008/blaine-16-pendant-c.jpg;kitchen-lighting|https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202514/0008/blaine-16-pendant-c.jpg",
+                    "salePriceMin": 499,
+                    "swatchPrices": "6605403;769.00;769.00;769.00;769.00;Regular~688166;549.00;549.00;549.00;549.00;Regular~6781582;549.00;549.00;549.00;549.00;Regular~5333222;549.00;549.00;549.00;549.00;Regular~8469474;769.00;769.00;769.00;769.00;Regular~1424895;499.00;549.00;499.00;549.00;Regular~1084178;499.00;499.00;499.00;499.00;Regular~8648596;499.00;499.00;499.00;499.00;Regular",
+                    "highestPrice": 769,
+                    "salePriceMax": 769,
+                    "imageOverride": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202514/0008/blaine-16-pendant-1-i.jpg",
+                    "imageRollOvers": "pendants;all-ceiling-lighting;custom-made-lighting;shop-all-lighting;kitchen-island-lighting;kitchen-lighting",
+                    "leaderSkuImage": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202530/0006/img43c.jpg",
+                    "regularPriceMax": 769,
+                    "swatchesDisplay": "6605403;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202535/0004/img392b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0003/img257c.jpg;Aged Brass~688166;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202528/0007/img206b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0041/img234c.jpg;Matte Oyster~6781582;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202534/0003/img262b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0003/img179c.jpg;MatteDarkSlate~5333222;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202534/0003/img16b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0004/img386c.jpg;MatteDoveGrey~8469474;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202532/0004/img403b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0005/img7c.jpg;Oil-Rubbed Bronze with Brushed Brass~1424895;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202534/0005/img165b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202514/0003/img402c.jpg;MatteRosemary~1084178;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202535/0006/img117b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0004/img115c.jpg;Oil-Rubbed Bronze~8648596;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202534/0003/img214b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202515/0003/img223c.jpg;MatteWhite",
+                    "regularPriceMin": 499,
+                    "facets": [
+                        {
+                            "name": "avlIn10WPL",
+                            "values": [
+                                461
+                            ]
+                        },
+                        {
+                            "name": "avlIn12WPL",
+                            "values": [
+                                461
+                            ]
+                        },
+                        {
+                            "name": "avlIn12WPlusPL",
+                            "values": [
+                                461
+                            ]
+                        },
+                        {
+                            "name": "avlIn4WPL",
+                            "values": [
+                                461
+                            ]
+                        },
+                        {
+                            "name": "avlIn6WPL",
+                            "values": [
+                                461
+                            ]
+                        },
+                        {
+                            "name": "avlIn8WPL",
+                            "values": [
+                                461
+                            ]
+                        },
+                        {
+                            "name": "store_ids",
+                            "values": [
+                                "ONLINE"
+                            ]
+                        }
+                    ],
+                    "productPriceType": "Regular",
+                    "thumb_image_parent": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202514/0008/blaine-16-pendant-1-i.jpg",
+                    "eligibleForQuickBuy": false,
+                    "group_ids": [
+                        "bring-color-home",
+                        "all-ceiling-lighting",
+                        "blaine-lighting-collection",
+                        "kitchen-lighting",
+                        "bedroom-essentials",
+                        "blue-lighting",
+                        "bestsellers-kitchen",
+                        "assembled-in-the-usa",
+                        "black-lighting",
+                        "bestsellers-shop-all",
+                        "bestsellers-lighting",
+                        "contract-grade",
+                        "green-lighting",
+                        "in-stock-items",
+                        "color-lighting",
+                        "contract-grade-shop-all",
+                        "white-lighting",
+                        "grey-lighting",
+                        "pendants",
+                        "custom-made-lighting",
+                        "contract-grade-lighting",
+                        "dining-room-project-guide",
+                        "portland-assembled",
+                        "shop-all-lighting",
+                        "kitchen-island-lighting",
+                        "in-stock-lighting"
+                    ],
+                    "variation_id": "blaine-16-pendant-pseudo"
+                },
+                "value": "Blaine 16\" Pendant",
+                "is_slotted": false
+            },
+            {
+                "matched_terms": [],
+                "labels": {},
+                "data": {
+                    "id": "theo-rod-pendant",
+                    "url": "https://www.rejuvenation.com/products/theo-rod-pendant/",
+                    "flags": [
+                        "bestseller"
+                    ],
+                    "title": "Theo Pendant, Metal Shade",
+                    "pipType": "configured",
+                    "leaderSku": 4099104,
+                    "image_url": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202517/0013/theo-pendant-i.jpg",
+                    "altImages": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202516/0002/theo-pendant-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202530/0001/theo-pendant-metal-shade-1-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202530/0001/theo-pendant-metal-shade-3-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0006/theo-pendant-metal-shade-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0002/terrafirma-bowl-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0006/theo-pendant-metal-shade-1-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202516/0023/theo-pendant-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0006/theo-pendant-glass-shade-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0002/theo-pendant-metal-shade-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0008/theo-pendant-metal-shade-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0009/theo-pendant-metal-shade-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0005/theo-pendant-glass-shade-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0003/theo-pendant-glass-shade-c.jpg,https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202517/0013/theo-pendant-1-c.jpg",
+                    "lowestPrice": 819,
+                    "hoverImages": "pendants|https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202517/0013/theo-pendant-1-c.jpg;custom-made-lighting|https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202517/0013/theo-pendant-1-c.jpg;shop-all-lighting|https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202517/0013/theo-pendant-1-c.jpg",
+                    "thumb_image": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202517/0013/theo-pendant-i.jpg",
+                    "description": "A contemporary and elevated take on old-world designs, Theo features elegant curves and beautiful finial details—creating a timeless visual element for your kitchen or dining room. Customize your pendant with a shade crafted from solid brass to suit your style. Details You'll Appreciate Contemporary traditional design Choose your finish, length, and shade—and we’ll build your light to fit the exact needs of your space Designed and assembled to order at our Portland, Oregon factory from domestic and imported parts Product Specifications Designed to showcase lightbulb (sold separately) Brass fixture with brass shade Optional vault mount accommodates a slope up to 45° Conforms to UL standards—this product is rated for use in damp environments Suitable for indoor and covered outdoor use Hardwired; professional installation recommended Assembled in the USA of domestic and imported parts Care Instructions Do not use abrasive pads or abrasive cleaning agents as this may harm the surface Warni",
+                    "salePriceMax": 969,
+                    "swatchPrices": "4099104;859.00;859.00;859.00;859.00;Regular~6332009;819.00;969.00;819.00;969.00;Regular~5775901;819.00;819.00;819.00;819.00;Regular~9770838;859.00;969.00;859.00;969.00;Regular~8024373;859.00;969.00;859.00;969.00;Regular~2141168;859.00;859.00;859.00;859.00;Regular",
+                    "salePriceMin": 819,
+                    "highestPrice": 969,
+                    "leaderSkuImage": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0061/img62c.jpg",
+                    "imageRollOvers": "pendants;custom-made-lighting;shop-all-lighting",
+                    "regularPriceMin": 819,
+                    "regularPriceMax": 969,
+                    "swatchesDisplay": "4099104;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202535/0007/img127b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0061/img62c.jpg;Unlacquered Brass~6332009;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202535/0006/img117b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202516/0033/img39c.jpg;Oil-Rubbed Bronze~5775901;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0029/img498b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202532/0004/img413c.jpg;Heritage Brass~9770838;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202535/0004/img392b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202517/0005/img478c.jpg;Aged Brass~8024373;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202535/0008/img42b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202531/0031/img487c.jpg;Polished Nickel~2141168;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202534/0004/img155b.jpg;https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202517/0005/img22c.jpg;MatteSedona",
+                    "facets": [
+                        {
+                            "name": "avlIn10WPL",
+                            "values": [
+                                38
+                            ]
+                        },
+                        {
+                            "name": "avlIn12WPL",
+                            "values": [
+                                38
+                            ]
+                        },
+                        {
+                            "name": "avlIn12WPlusPL",
+                            "values": [
+                                999999
+                            ]
+                        },
+                        {
+                            "name": "avlIn4WPL",
+                            "values": [
+                                38
+                            ]
+                        },
+                        {
+                            "name": "avlIn6WPL",
+                            "values": [
+                                38
+                            ]
+                        },
+                        {
+                            "name": "avlIn8WPL",
+                            "values": [
+                                38
+                            ]
+                        },
+                        {
+                            "name": "store_ids",
+                            "values": [
+                                "ONLINE"
+                            ]
+                        }
+                    ],
+                    "productPriceType": "Regular",
+                    "thumb_image_parent": "https://assets.rjimgs.com/rjimgs/rk/images/dp/wcm/202517/0013/theo-pendant-i.jpg",
+                    "eligibleForQuickBuy": false,
+                    "group_ids": [
+                        "shop-all-lighting",
+                        "theo-lighting-collection",
+                        "yellow-lighting",
+                        "bestsellers-shop-all",
+                        "custom-made-lighting",
+                        "green-lighting",
+                        "red-lighting",
+                        "bedroom-essentials",
+                        "heritage-brass",
+                        "bestsellers-lighting",
+                        "color-lighting",
+                        "statement-heritage-brass",
+                        "in-stock-lighting",
+                        "black-lighting",
+                        "in-stock-items",
+                        "pendants"
+                    ],
+                    "variation_id": "theo-rod-pendant-pseudo"
+                },
+                "value": "Theo Pendant, Metal Shade",
+                "is_slotted": false
+            }
+        ],
+        "sort_options": [
+            {
+                "sort_by": "relevance",
+                "display_name": "Most Relevant",
+                "sort_order": "descending",
+                "hidden": false,
+                "status": "selected"
+            }
+        ],
+        "refined_content": [],
+        "total_num_results": 20,
+        "features": [
+            {
+                "feature_name": "a_a_test",
+                "display_name": "a_a_test",
+                "enabled": false,
+                "variant": null
+            }
+        ],
+        "related_searches": [],
+        "related_browse_pages": []
+    },
+    "result_id": "75db5f46-94fd-4665-a4f4-4c1301b95970",
+    "request": {
+        "sort_by": "relevance",
+        "sort_order": "descending",
+        "num_results_per_page": 20,
+        "blacklist_rules": true,
+        "term": "i'm looking for lights under $150",
+        "page": 1,
+        "fmt_options": {
+            "groups_start": "current",
+            "groups_max_depth": 1,
+            "show_hidden_facets": false,
+            "show_hidden_fields": false,
+            "show_protected_facets": false
+        },
+        "section": "Products",
+        "features": {
+            "query_items": true,
+            "a_a_test": false,
+            "auto_generated_refined_query_rules": true,
+            "manual_searchandizing": true,
+            "personalization": true,
+            "filter_items": true,
+            "use_reranker_service_for_search": true,
+            "use_reranker_service_for_browse": true,
+            "use_reranker_service_for_all": false,
+            "custom_autosuggest_ui": false,
+            "disable_test_only_global_rules_search": false,
+            "disable_test_only_global_rules_browse": false,
+            "use_enriched_attributes_as_fuzzy_searchable": false
+        },
+        "feature_variants": {
+            "query_items": "query_items_ctr_and_l2r",
+            "a_a_test": null,
+            "auto_generated_refined_query_rules": "default_rules",
+            "manual_searchandizing": null,
+            "personalization": "default_personalization",
+            "filter_items": "filter_items_w_atcs_and_purchases",
+            "use_reranker_service_for_search": "search_reranker_v0_top100",
+            "use_reranker_service_for_browse": "browse_reranker_v0_top100",
+            "use_reranker_service_for_all": null,
+            "custom_autosuggest_ui": null,
+            "disable_test_only_global_rules_search": null,
+            "disable_test_only_global_rules_browse": null,
+            "use_enriched_attributes_as_fuzzy_searchable": null
+        },
+        "searchandized_items": {}
+    }
+}

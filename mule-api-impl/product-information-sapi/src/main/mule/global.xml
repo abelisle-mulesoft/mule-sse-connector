@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns:secure-properties="http://www.mulesoft.org/schema/mule/secure-properties"
+	xmlns:sse="http://www.mulesoft.org/schema/mule/sse"
+	xmlns:api-gateway="http://www.mulesoft.org/schema/mule/api-gateway" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/mule/api-gateway/current/mule-api-gateway.xsd 
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/sse http://www.mulesoft.org/schema/mule/sse/current/mule-sse.xsd
+http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/schema/mule/secure-properties/current/mule-secure-properties.xsd">
+	<global-property doc:name="Global Property" doc:id="7d11dbec-1606-43d1-a7ba-1ce0e914e4cb" name="env" value="dev" />
+	<configuration-properties doc:name="Configuration properties" doc:id="c3193883-1c80-417f-ae85-7302da5dcc55" file="properties/mule-props-${env}.yaml" />
+    <http:listener-config name="product-information-sapi-httpListenerConfig">
+        <http:listener-connection host="${http_listener.host}" port="${http.port}"/>
+    </http:listener-config>
+    <api-gateway:autodiscovery apiId="${autodiscovery.api_id}" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="f13b53ce-2717-4063-86a3-35937eedfe28" flowRef="${autodiscovery.flow_name}" />
+	<http:request-config name="CNSTRC_Search_Query_HTTP_Request_Config" doc:name="HTTP Request configuration" doc:id="d3577c13-9441-4de4-94a3-8b03071b761c" basePath="${constructor.search.query.base_path}" >
+		<http:request-connection protocol="HTTPS" host="${constructor.search.query.host}" port="${constructor.search.query.port}" />
+	</http:request-config>
+	<sse:config name="CNSTRC_Intent_SSE_Connector_Config" doc:name="SSE Connector Config" doc:id="3b40082c-7709-4b6a-91f5-06fa74207bbd" sseServerBaseURL="${constructor.intent.query.base_url}" apiKey="${constructor.key}"/>
+</mule>
