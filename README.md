@@ -19,7 +19,7 @@ In the repository's current revision:
 >
 > 1. Does not include proper error handling.
 > 2. Uses `System.out.println` and `System.err.println` instead of a more robust logger.
-> 3. Does not properly open, maintain, and close the connection to the SSE endpoint. Also, it does not implement the `SSEConnection` and `SSEConnectionProvider` classes.
+> 3. Does not properly manage the connection to the SSE endpoint. Also, it does not implement the `SSEConnection` and `SSEConnectionProvider` classes intentionally.
 > 4. Uses a rudimentary algorithm to parse the SSE events and the lines they contain.
 > 5. Was installed in a local Maven repository instead of publishing it to Anypoint Exchange.
 
@@ -49,11 +49,11 @@ mvn clean install
 <dependency>
   <groupId>org.mule.extension</groupId>
   <artifactId>sse-connector</artifactId>
-  <version>0.1.1</version>
+  <version>0.2.0</version>
   <classifier>mule-plugin</classifier>
 </dependency>
 ```
 
 > [!NOTE]
 >
-> As of this writing, the current revision of this connector is `0.1.1`. Adjust it in the dependency snippet if and as needed.
+> As of this writing, the current revision of this connector is `0.2.0`. Adjust it in the dependency snippet if and as needed.
