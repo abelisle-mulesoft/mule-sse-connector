@@ -24,7 +24,7 @@ encodeURI(payload.prompt)]]></ee:set-variable>
 			<http:headers><![CDATA[#[output application/java
 ---
 {
-	"accept" : "application/json"
+	"Accept" : "application/json"
 }]]]></http:headers>
 			<http:query-params ><![CDATA[#[output application/java
 ---
@@ -76,7 +76,19 @@ encodeURI(payload.prompt)]]></ee:set-variable>
 		</ee:transform>
 		<scatter-gather doc:name="Scatter-Gather" doc:id="38ad2300-0ea5-42be-a1e2-312372357a40" >
 			<route >
-				<sse:get-sse-events doc:name="Retrieve by Intent API" doc:id="f07146f4-153a-4bfd-8a06-6c55c5a5bf14" config-ref="CNSTRC_Intent_SSE_Connector_Config" query="#[payload.prompt]" path="${constructor.intent.query.path}" domain="${constructor.intent.query.domain}" targetValue="#[output application/json --- payload]" />
+				<sse:get-sse-events doc:name="Retrieve by Intent API" doc:id="f07146f4-153a-4bfd-8a06-6c55c5a5bf14" config-ref="CNSTRC_Intent_SSE_Connector_Config" path='#[p("constructor.intent.query.path") ++ "/" ++ vars.encodedPrompt]' targetValue="#[output application/json --- payload]" >
+					<sse:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "text/event-stream"
+}]]]></sse:headers>
+					<sse:query-params ><![CDATA[#[output application/java
+---
+{
+	"domain" : p("constructor.intent.query.domain"),
+	"key" : p("constructor.key")
+}]]]></sse:query-params>
+				</sse:get-sse-events>
 				<choice doc:name="Any result?" doc:id="de1075aa-a2d3-4bd5-9e2a-d75a3f60b491">
 			<when expression='#[sizeOf(payload) != 0 and payload[?($.event=="end")].data.search_result_count[0] != 0]'>
 				<ee:transform doc:name="Extract search_result Events" doc:id="e145bc1b-241c-4353-a040-26740b1be621">

@@ -17,5 +17,5 @@ http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/sc
 	<http:request-config name="CNSTRC_Search_Query_HTTP_Request_Config" doc:name="HTTP Request configuration" doc:id="d3577c13-9441-4de4-94a3-8b03071b761c" basePath="${constructor.search.query.base_path}" >
 		<http:request-connection protocol="HTTPS" host="${constructor.search.query.host}" port="${constructor.search.query.port}" />
 	</http:request-config>
-	<sse:config name="CNSTRC_Intent_SSE_Connector_Config" doc:name="SSE Connector Config" doc:id="3b40082c-7709-4b6a-91f5-06fa74207bbd" sseServerBaseURL="${constructor.intent.query.base_url}" apiKey="${constructor.key}"/>
+	<sse:config name="CNSTRC_Intent_SSE_Connector_Config" doc:name="SSE Connector Config" doc:id="3b40082c-7709-4b6a-91f5-06fa74207bbd" sseServerBaseURL="${constructor.intent.query.base_url}" />
 </mule>
