@@ -46,10 +46,17 @@ import java.util.StringJoiner;
 @DisplayName("SSE Connector Operations")
 public class SSEOperations {
 
+
     /**
-     * Jackson ObjectMapper for parsing SSE data payloads (JSON if possible).
+     * Shared Jackson ObjectMapper for parsing SSE data payloads, which Constructor sends as JSON objects (thread-safe
+     * after configuration).
      */
-    private final ObjectMapper mapper = new ObjectMapper();
+    private static final ObjectMapper MAPPER = new ObjectMapper();
+
+    /**
+     * Shared HttpClient instance (thread-safe, supports connection pooling).
+     */
+    private static final HttpClient CLIENT = HttpClient.newHttpClient();
 
     /**
      * Utility method to build a fully configured {@link HttpRequest} for sending HTTP GET requests.
@@ -146,11 +153,9 @@ public class SSEOperations {
         // be exceeded.
         HttpRequest request = buildGetRequest(url, sseSettings.getHeaders(), config.getResponseTimeout());
 
-        HttpClient client = HttpClient.newHttpClient();
-
         try {
             // Send the request and capture the entire response - i.e., all streamed events.
-            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            HttpResponse<String> response = CLIENT.send(request, HttpResponse.BodyHandlers.ofString());
 
             // Get the response body
             String responseBody = response.body();
@@ -312,7 +317,7 @@ public class SSEOperations {
                     String dataStr = str.substring(5).trim();
                     try {
                         // Attempt to parse JSON data
-                        Object dataObj = mapper.readValue(dataStr, Object.class);
+                        Object dataObj = MAPPER.readValue(dataStr, Object.class);
                         event.setData(dataObj);
                     } catch (Exception e) {
                         // Fallback: store raw string if JSON parsing fails
