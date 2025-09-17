@@ -9,7 +9,7 @@ In addition, this repository includes the `Product Information System API`, a RE
 > The current revision of the custom Mule 4 SSE connector is strongly influenced by Constructor's SSE implementation. As examples:
 >
 > - The SSE events that the Retrieve by intent API returns only contain lines with the `event` and `data` fields. It does not send a line with the `id` field. As such, the current revision of the custom Mule 4 SSE connector parses the event differently.
-> - The actual content or payload sent with the data field is a JSON object sent as plain text. As such, the current revision of the custom Mule 4 SSE connector parses the payloads and the JSON object they contain.
+> - The actual content or payload sent with the `data` field is a JSON object sent as plain text. As such, the current revision of the custom Mule 4 SSE connector parses the payloads and the JSON object they contain.
 
 
 > [!CAUTION]
@@ -18,7 +18,6 @@ In addition, this repository includes the `Product Information System API`, a RE
 >
 > 1. Does not include proper error handling.
 > 2. Uses `System.out.println` and `System.err.println` instead of a more robust logger.
-> 3. Does not properly manage the connection to the SSE endpoint. Also, it does not implement the `SSEConnection` and `SSEConnectionProvider` classes intentionally.
 > 4. Uses a rudimentary algorithm to parse the SSE events and the lines they contain.
 > 5. Was installed in a local Maven repository instead of publishing it to Anypoint Exchange.
 
