@@ -26,15 +26,14 @@ autodiscovery:
 #---------------------------------------------------------------------------------------------------
 # Constructor API Configuration
 constructor:
-  key:            ""
   search:
     query:
       host:       "ac.cnstrc.com"
       port:       ""        # Use default port number
       base_path:  "/"
-      path:       "/v1/search/"
+      path:       "/v1/search"
   intent:
     query:
       base_url:   "https://agent.cnstrc.com"
-      path:       "/v1/intent/"
+      path:       "/v1/intent"
       domain:     ""

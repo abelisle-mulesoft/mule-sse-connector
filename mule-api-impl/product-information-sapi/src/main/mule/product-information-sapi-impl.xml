@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mule xmlns:sse="http://www.mulesoft.org/schema/mule/sse" xmlns:http="http://www.mulesoft.org/schema/mule/http"
-	xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
-	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+<mule xmlns:sse="http://www.mulesoft.org/schema/mule/sse"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/sse http://www.mulesoft.org/schema/mule/sse/current/mule-sse.xsd">
-	<flow name="search-products-flow" doc:id="ebe47a99-75d0-4878-85c3-3189762d135a">
+	<sub-flow name="search-products-flow" doc:id="ebe47a99-75d0-4878-85c3-3189762d135a">
+		<logger level="INFO" doc:name="LOG: START" doc:id="67bed369-ac70-46e4-bf56-b36700915bc9" message="Search product Flow started"/>
 		<ee:transform doc:name="Encode Prompt" doc:id="e45dee3f-a168-4cb9-8a61-cbe6eaca482f">
 			<ee:message>
 			</ee:message>
@@ -18,21 +19,29 @@ encodeURI(payload.prompt)]]></ee:set-variable>
 			</ee:variables>
 		</ee:transform>
 		<flow-ref doc:name="retrieve-by-query-subflow" doc:id="d45858fd-dd58-4726-9b09-a32a9a502a68" name="retrieve-by-query-subflow" />
-	</flow>
+		<logger level="INFO" doc:name="LOG: END" doc:id="bdcc3cce-6d66-4893-8ee6-52c79a0bb315" message="Search product Flow Ended" />
+	</sub-flow>
 	<sub-flow name="retrieve-by-query-subflow" doc:id="5368417c-781b-4c56-ad4b-64d1beb83618">
-		<http:request method="GET" doc:name="Retrieve by Query" doc:id="a53e36d0-7487-45f7-8e39-f97a4d8b8431" config-ref="CNSTRC_Search_Query_HTTP_Request_Config" path='#[p("constructor.search.query.path") ++ vars.encodedPrompt]' outputMimeType="application/json" sendBodyMode="NEVER">
+		<try doc:name="Try" doc:id="fc77e715-b9ed-4f24-bc5f-8e2a5371161f" >
+			<http:request method="GET" doc:name="Retrieve by Query" doc:id="a53e36d0-7487-45f7-8e39-f97a4d8b8431" config-ref="CNSTRC_Search_Query_HTTP_Request_Config" path='#[p("constructor.search.query.path") ++ "/" ++ vars.encodedPrompt]' outputMimeType="application/json" sendBodyMode="NEVER" responseTimeout="10000">
 			<http:headers><![CDATA[#[output application/java
 ---
 {
 	"Accept" : "application/json"
 }]]]></http:headers>
-			<http:query-params ><![CDATA[#[output application/java
+			<http:query-params><![CDATA[#[output application/java
 ---
 {
-	"key" : p("constructor.key")
+	"key" : p("secure::constructor.key")
 }]]]></http:query-params>
 		</http:request>
-		<ee:transform doc:name="Create API Response" doc:id="a6f23d32-a0cb-42fd-992c-b36175ffff56">
+			<error-handler >
+				<on-error-continue enableNotifications="true" logException="true" doc:name="On Error Continue" doc:id="5f2da01d-1913-4220-bd2a-e9aed633b801" >
+					<raise-error doc:name="Raise error" doc:id="22a867c6-dfd2-48b3-bcd2-d04443064d22" type="ANY" description="Query Call Failed"/>
+				</on-error-continue>
+			</error-handler>
+		</try>
+		<ee:transform doc:name="Transform for query call" doc:id="a6f23d32-a0cb-42fd-992c-b36175ffff56">
 			<ee:message>
 				<ee:set-payload><![CDATA[%dw 2.0
 output application/json
@@ -63,33 +72,22 @@ output application/json
 			</ee:message>
 		</ee:transform>
 	</sub-flow>
-	<flow name="get-products-by-intent-flow" doc:id="6cd651a2-24d1-40d9-bb26-177d6e448458" >
-		<ee:transform doc:name="Encode Prompt" doc:id="8b817aea-c214-4543-9526-942ad61de26b">
-			<ee:message />
-			<ee:variables>
-				<ee:set-variable variableName="encodedPrompt"><![CDATA[%dw 2.0
-import * from dw::core::URL
-output application/java
----
-encodeURI(payload.prompt)]]></ee:set-variable>
-			</ee:variables>
-		</ee:transform>
-		<scatter-gather doc:name="Scatter-Gather" doc:id="38ad2300-0ea5-42be-a1e2-312372357a40" >
-			<route >
-				<sse:get-sse-events doc:name="Retrieve by Intent API" doc:id="f07146f4-153a-4bfd-8a06-6c55c5a5bf14" config-ref="CNSTRC_Intent_SSE_Connector_Config" path='#[p("constructor.intent.query.path") ++ "/" ++ vars.encodedPrompt]' targetValue="#[output application/json --- payload]" >
-					<sse:headers ><![CDATA[#[output application/java
+	<sub-flow name="get-products-by-intent-flow" doc:id="86182727-341d-4c4a-9dba-dd4df7480a4d" >
+		<logger level="INFO" doc:name="LOG: START" doc:id="4582c244-d529-41a8-b695-a66a22b47a12" message="Intent call Flow started" />
+		<sse:get-sse-events doc:name="Retrieve by Intent API" doc:id="f07146f4-153a-4bfd-8a06-6c55c5a5bf14" config-ref="CNSTRC_Intent_SSE_Connector_Config" path='#[p("constructor.intent.query.path") ++ "/" ++ vars.encodedPrompt]' targetValue="#[output application/json --- payload]" >
+			<sse:headers ><![CDATA[#[output application/java
 ---
 {
-	"Accept" : "text/event-stream"
+	"Accept" : "application/json"
 }]]]></sse:headers>
-					<sse:query-params ><![CDATA[#[output application/java
+			<sse:query-params ><![CDATA[#[output application/java
 ---
 {
 	"domain" : p("constructor.intent.query.domain"),
-	"key" : p("constructor.key")
+	"key" : p("secure::constructor.key")
 }]]]></sse:query-params>
-				</sse:get-sse-events>
-				<choice doc:name="Any result?" doc:id="de1075aa-a2d3-4bd5-9e2a-d75a3f60b491">
+		</sse:get-sse-events>
+		<choice doc:name="Any result?" doc:id="de1075aa-a2d3-4bd5-9e2a-d75a3f60b491">
 			<when expression='#[sizeOf(payload) != 0 and payload[?($.event=="end")].data.search_result_count[0] != 0]'>
 				<ee:transform doc:name="Extract search_result Events" doc:id="e145bc1b-241c-4353-a040-26740b1be621">
 					<ee:message>
@@ -107,15 +105,15 @@ output application/json
 flatten(payload.data.response.results).data]]></ee:set-payload>
 					</ee:message>
 				</ee:transform>
-				<ee:transform doc:name="Create API Response" doc:id="fc6304f8-8325-4267-848b-8bf21a0c7885">
-					<ee:message>
-						<ee:set-payload><![CDATA[%dw 2.0
+				<ee:transform doc:name="Transform for intent call" doc:id="021b4b1b-0315-4acf-9921-19c47665ed13" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
 output application/json
 ---
 {
   "searchType": "Intent",
   "products":
-    (if(sizeOf(payload) > 5) payload[0 to 4] else payload) map (item, index) -> {
+	payload map (item, index) -> {
         "id": item.id,
         "title": item.title,
         "image_url": item.image_url,
@@ -139,7 +137,7 @@ output application/json
 				</ee:transform>
 			</when>
 					<otherwise>
-						<logger level="INFO" doc:name="Info - No reasults " doc:id="b4dae5ea-94ac-4600-8523-3562a6b16964" message="No results from the Constructor Retrieve by Intent API" />
+						<logger level="INFO" doc:name="Info - No results " doc:id="b4dae5ea-94ac-4600-8523-3562a6b16964" message="No results from the Constructor Retrieve by Intent API" />
 						<ee:transform doc:name="Empty Response" doc:id="9c3a7631-6b0e-49e6-bb0b-5b104237b1bb">
 							<ee:message>
 								<ee:set-payload><![CDATA[%dw 2.0
@@ -150,18 +148,65 @@ output application/json
 						</ee:transform>
 			</otherwise>
 		</choice>
+		<logger level="INFO" doc:name="LOG: END" doc:id="c9a5f0e1-d61b-442c-ba50-000ceefd6ef6" message="Intent call Flow Ended" />
+	</sub-flow>
+	<sub-flow name="get-products-by-parallel-call-flow" doc:id="6cd651a2-24d1-40d9-bb26-177d6e448458" >
+		<logger level="INFO" doc:name="LOG: START" doc:id="46d1d2c8-da9f-4130-bc7b-2595714b4055" message="Get Products by paralled Flow started" />
+		<ee:transform doc:name="Encode Prompt" doc:id="8b817aea-c214-4543-9526-942ad61de26b">
+			<ee:message />
+			<ee:variables>
+				<ee:set-variable variableName="encodedPrompt"><![CDATA[%dw 2.0
+import * from dw::core::URL
+output application/java
+---
+encodeURI(payload.prompt)]]></ee:set-variable>
+			</ee:variables>
+		</ee:transform>
+		<scatter-gather doc:name="Scatter-Gather" doc:id="38ad2300-0ea5-42be-a1e2-312372357a40" >
+			<route >
+				<try doc:name="Try" doc:id="6458f9f2-e9f2-41a3-b20f-0f79e6d1557f" >
+					<flow-ref doc:name="retriece-by-intent-subflow" doc:id="61ec4185-6ba5-4c90-b087-ea364bf2390a" name="get-products-by-intent-flow" />
+					<error-handler >
+						<on-error-continue enableNotifications="true" logException="true" doc:name="On Error Continue" doc:id="bc96383c-7ed4-48e8-bf32-f0a4c4302278" >
+							<logger level="INFO" doc:name="INFO - Error Log" doc:id="aa274ec0-0b53-4695-8030-15604174f488" message="Failed from Intent API"/>
+							<ee:transform doc:name="Empty Response" doc:id="83d7dff9-bb29-4fd5-8c8f-f73db8ba9135" >
+								<ee:message >
+									<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+[]]]></ee:set-payload>
+								</ee:message>
+							</ee:transform>
+						</on-error-continue>
+					</error-handler>
+				</try>
 			</route>
 			<route >
 				<flow-ref doc:name="retrieve-by-query-subflow" doc:id="40ad0691-3abb-4fea-9ae6-d7a2729eb213" name="retrieve-by-query-subflow" />
 			</route>
 		</scatter-gather>
-		<ee:transform doc:name="Flatten Responses" doc:id="c6640338-6f1d-4b6c-9b49-c2c24c880504" >
-			<ee:message >
-				<ee:set-payload ><![CDATA[%dw 2.0
+		<choice doc:name="Choice" doc:id="3ffbb2d0-9119-498d-837e-ac67eab1aa3f" >
+			<when expression='#[sizeOf(payload[0]) &gt; 0 and payload[0].payload.searchType == "Intent"]'>
+				<ee:transform doc:name="Transform for Intent" doc:id="c6640338-6f1d-4b6c-9b49-c2c24c880504">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
 output application/json
 ---
-flatten(payload..payload)]]></ee:set-payload>
+payload[0].payload]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
-	</flow>
+			</when>
+			<otherwise >
+				<ee:transform doc:name="Transform for query" doc:id="34884a8c-7b81-4891-84c2-152803595949" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload[1].payload]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</otherwise>
+		</choice>
+		<logger level="INFO" doc:name="LOG: END" doc:id="ad7065e7-914d-4ff8-8306-259cc5fef6c2" message="Get Products by paralled Flow ended #[payload]" />
+	</sub-flow>
 </mule>

@@ -70,4 +70,6 @@ buildNumber.properties
 exchange-docs/
 **/.DS_Store
 **/*.jks
+**/application-props-*.yaml
 **/mule-props-*.yaml
+**/secure-props-*.yaml

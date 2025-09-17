@@ -146,7 +146,8 @@ output application/json
 {
   dateTime: now(),
   httpStatus: 500,
-  summaryMessage: "Internal server error",
+  detailedMessage: error.detailedDescription,
+  summaryMessage: error.description,
   errorType: error.errorType.identifier
 }]]></ee:set-payload>
                     </ee:message>
@@ -193,6 +194,6 @@ output application/json
         <flow-ref doc:name="search-products-flow" doc:id="557e8535-5dda-4d7f-b880-821170369897" name="search-products-flow" />
     </flow>
     <flow name="post:\products\intent:application\json:product-information-sapi-config">
-        <flow-ref doc:name="get-products-by-intent-flow" doc:id="f3a5bac1-4da0-4b15-9e94-47fe825b20fd" name="get-products-by-intent-flow" />
+        <flow-ref doc:name="get-products-by-parallel-call-flow" doc:id="f3a5bac1-4da0-4b15-9e94-47fe825b20fd" name="get-products-by-parallel-call-flow" />
     </flow>
 </mule>

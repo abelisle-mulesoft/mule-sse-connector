@@ -9,7 +9,10 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 http://www.mulesoft.org/schema/mule/sse http://www.mulesoft.org/schema/mule/sse/current/mule-sse.xsd
 http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/schema/mule/secure-properties/current/mule-secure-properties.xsd">
 	<global-property doc:name="Global Property" doc:id="7d11dbec-1606-43d1-a7ba-1ce0e914e4cb" name="env" value="dev" />
-	<configuration-properties doc:name="Configuration properties" doc:id="c3193883-1c80-417f-ae85-7302da5dcc55" file="properties/mule-props-${env}.yaml" />
+	<global-property doc:name="Global Property" doc:id="ce029f22-e307-4edd-b879-a459a598f004" name="key" value="dummy key overriden at runtime" />
+	<configuration-properties doc:name="Configuration properties" doc:id="c3193883-1c80-417f-ae85-7302da5dcc55" file="properties/application-props-${env}.yaml" />
+	<secure-properties:config name="Secure_Properties_Config" doc:name="Secure Properties Config" doc:id="dce2a964-d0be-4bf2-87ca-215efed684cb" file="properties/secure-props-${env}.yaml" key="${key}" >
+	</secure-properties:config>
     <http:listener-config name="product-information-sapi-httpListenerConfig">
         <http:listener-connection host="${http_listener.host}" port="${http.port}"/>
     </http:listener-config>
