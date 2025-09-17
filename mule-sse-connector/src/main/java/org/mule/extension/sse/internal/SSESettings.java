@@ -41,7 +41,9 @@ public class SSESettings {
         return headers;
     }
 
-    public void setHeaders(Map<String, String> headers) { this.headers = headers; }
+    public void setHeaders(Map<String, String> headers) {
+        this.headers = headers;
+    }
 
     public String getPath() {
         return path;

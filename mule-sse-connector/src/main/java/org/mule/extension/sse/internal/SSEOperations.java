@@ -19,9 +19,36 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
+/**
+ * Defines the operations available for the SSE (Server-Sent Events) Mule 4 connector.
+ * <p>
+ * This class contains methods that can be invoked within a Mule application.
+ * Operations include invoking an SSE endpoint and parsing streamed events into
+ * {@link SSEEvent} objects.
+ * </p>
+ *
+ * <h2>Responsibilities</h2>
+ * <ul>
+ *   <li>Builds properly configured HTTP requests for SSE endpoints.</li>
+ *   <li>Constructs URLs by combining base URL, path, and query parameters.</li>
+ *   <li>Executes blocking HTTP GET calls to SSE servers.</li>
+ *   <li>Parses raw SSE event blocks into {@link SSEEvent} POJOs.</li>
+ * </ul>
+ *
+ * <p>
+ * <b>Note:</b> Current parsing logic is intentionally simplistic and optimized
+ * for a proof-of-concept with the Constructor “Retrieve by intent” API.
+ * It should be refactored for production-grade usage.
+ * </p>
+ *
+ * @since 1.0
+ */
 @DisplayName("SSE Connector Operations")
 public class SSEOperations {
 
+    /**
+     * Jackson ObjectMapper for parsing SSE data payloads (JSON if possible).
+     */
     private final ObjectMapper mapper = new ObjectMapper();
 
     /**
@@ -90,6 +117,19 @@ public class SSEOperations {
         return requestBuilder.GET().build();
     }
 
+    /**
+     * Retrieves SSE events from the configured SSE endpoint.
+     * <p>
+     * This operation executes synchronously, blocking until:
+     * <ul>
+     *   <li>The SSE server closes the connection, or</li>
+     *   <li>The configured timeout is exceeded.</li>
+     * </ul>
+     *
+     * @param sseSettings A group of request parameters (headers, path, query params).
+     * @param config      Connector-level configuration (base URL, response timeout).
+     * @return A list of parsed {@link SSEEvent} objects. May be empty if no events are received.
+     */
     @MediaType(value = MediaType.ANY, strict = false)
     @DisplayName("Get Events")
     public List<SSEEvent> getSSEEvents(
