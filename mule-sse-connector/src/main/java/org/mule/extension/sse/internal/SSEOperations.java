@@ -133,25 +133,25 @@ public class SSEOperations {
      *   <li>The configured timeout is exceeded.</li>
      * </ul>
      *
-     * @param sseSettings A group of request parameters (headers, path, query params).
+     * @param operationParameters A group of request parameters (headers, path, query params).
      * @param config      Connector-level configuration (base URL, response timeout).
      * @return A list of parsed {@link SSEEvent} objects. May be empty if no events are received.
      */
     @MediaType(value = MediaType.ANY, strict = false)
     @DisplayName("Get Events")
     public List<SSEEvent> getSSEEvents(
-            @ParameterGroup(name = "Request") SSESettings sseSettings,
+            @ParameterGroup(name = "Request") GetEventsParameters operationParameters,
             @Config SSEConfiguration config
     ) {
         List<SSEEvent> events = new ArrayList<>();
 
         // Build the SSE endpoint's URL using the base URL and path settings, and any provided query parameters
-        String url = buildUrl(config.getSSEServerBaseURL(), sseSettings.getPath(), sseSettings.getQueryParams());
+        String url = buildUrl(config.getSSEServerBaseURL(), operationParameters.getPath(), operationParameters.getQueryParams());
 
         // Create a new GET request for invoking the SSE endpoint. This request is intentionally synchronous, blocking
         // to receive all SSE events, waiting for the SSE endpoint to close the connection, or the specified timeout to
         // be exceeded.
-        HttpRequest request = buildGetRequest(url, sseSettings.getHeaders(), config.getResponseTimeout());
+        HttpRequest request = buildGetRequest(url, operationParameters.getHeaders(), config.getResponseTimeout());
 
         try {
             // Send the request and capture the entire response - i.e., all streamed events.
