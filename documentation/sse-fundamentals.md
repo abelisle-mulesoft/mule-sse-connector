@@ -1,6 +1,6 @@
 # SSE Fundamentals
 
-TO DO: add introduction that describes the purpose of this document.
+This document introduces the fundamentals of Server-Sent Events (SSE), a lightweight protocol for unidirectional, server-to-client event streaming over HTTP. It explains the SSE specification, message format, and key fields (id, event, data, retry) with illustrative examples. The document also examines Constructor’s Retrieve by intent API implementation of SSE, which adheres to the standard while streaming JSON payloads with specific event types. Ultimately, this overview is intended to help readers understand general SSE concepts and, most importantly, help you understand the underlying implementation of the custom Mule 4 SSE connector.
 
 ## SSE Overview
 
@@ -60,18 +60,28 @@ Generally speaking, the Constructor Retrieve by intent API is compliant with the
 - As witnessed in more than 30 requests while testing the custom Mule 4 SSE connector, it does not implement any non-standard field. However, the SSE events it returns only contain lines with the `event` and `data` fields. It does not send a line with the `id` field.
 - Finally, the actual content or payload sent with the data field is a JSON object, which is plain text - i.e., it is not chunked or newline-delimited.
 
-Here is an example of a complete response from the Retrieve by intent API with three SSE events that returned no search results. 
+Here is an example of the typical response from the Retrieve by intent API with five SSE events that returned two `search_result` events. 
 
 ```text
 event: start
-data: {"intent_result_id":"5b64da3b-1b54-4160-902c-828c2fd63a8b","thread_id":"d8522a55-feac-47ea-995a-5c5f3dc8cc52","request":{"intent":"query","key":"key_bvtZwrAmLzWlq0gA","thread_id":"d8522a55-feac-47ea-995a-5c5f3dc8cc52","domain":"explorer","guard":false,"num_results_per_event":10}}
+data: {"intent_result_id":"23d67f56-1a04-4dc9-b4b7-8c57b3b32c8e","request":{"intent":"I'm+looking+for+a+coffee+or+espresso+maker+under+$150","query_params":{"key":"key_9BhS51IOFNhJejk4","domain":"housewares","guard":false}}}
 
 event: message
-data: {"intent_result_id":"5b64da3b-1b54-4160-902c-828c2fd63a8b","thread_id":"d8522a55-feac-47ea-995a-5c5f3dc8cc52","text":"Welcome! Every home has the potential to inspire. How can I help you discover the perfect piece for your space today? Let me know what you're looking for—lighting, furniture, hardware, or something else—and I'll provide tailored recommendations."}
+data: {"intent_result_id":"23d67f56-1a04-4dc9-b4b7-8c57b3b32c8e","text":"Looking for a great coffee or espresso maker under $150? Here are some excellent, lightweight options—whether you want classic drip, espresso, or a manual brew method, there’s something here for every taste and budget."}
+
+event: search_result
+data: {"intent_result_id":"23d67f56-1a04-4dc9-b4b7-8c57b3b32c8e","result_id":"9498b958-fb7b-4d43-869e-961fb25532fd","title":"Espresso & Stovetop Espresso Makers","response":{"search_request":{"display_name":"Espresso & Stovetop Espresso Makers","search_term":"Espresso & Stovetop Espresso Makers","params":{}},"alternative_search_requests":[],"results":["**values removed for readability**"]},"request":{"num_results_per_page":20,"ids":["**values removed for readability**"],"term":"","page":1,"fmt_options":{"groups_start":"current","groups_max_depth":1,"show_hidden_facets":false,"show_hidden_fields":false,"show_protected_facets":false},"sort_by":"relevance","sort_order":"descending","section":"Products","features":{"query_items":true,"a_a_test":false,"auto_generated_refined_query_rules":true,"manual_searchandizing":true,"personalization":true,"filter_items":true,"use_reranker_service_for_search":true,"use_reranker_service_for_browse":true,"use_reranker_service_for_all":false,"custom_autosuggest_ui":false,"disable_test_only_global_rules_search":false,"disable_test_only_global_rules_browse":false,"use_enriched_attributes_as_fuzzy_searchable":false},"feature_variants":{"query_items":"query_items_ctr_enriched_prefix_and_ctr_and_ctr_ss","a_a_test":null,"auto_generated_refined_query_rules":"default_rules","manual_searchandizing":null,"personalization":"default_personalization","filter_items":"filter_items_w_atcs_and_purchases","use_reranker_service_for_search":null,"use_reranker_service_for_browse":null,"use_reranker_service_for_all":null,"custom_autosuggest_ui":null,"disable_test_only_global_rules_search":null,"disable_test_only_global_rules_browse":null,"use_enriched_attributes_as_fuzzy_searchable":null}}}
+
+event: search_result
+data: {"intent_result_id":"23d67f56-1a04-4dc9-b4b7-8c57b3b32c8e","result_id":"7bb25152-9aa5-44c2-9f33-4c1c92cf97eb","title":"Compact & Programmable Drip Coffee Makers","response":{"search_request":{"display_name":"Compact & Programmable Drip Coffee Makers","search_term":"Compact & Programmable Drip Coffee Makers","params":{}},"alternative_search_requests":[],"results":["**values removed for readability**"]},"request":{"num_results_per_page":20,"ids":["**values removed for readability**"],"term":"","page":1,"fmt_options":{"groups_start":"current","groups_max_depth":1,"show_hidden_facets":false,"show_hidden_fields":false,"show_protected_facets":false},"sort_by":"relevance","sort_order":"descending","section":"Products","features":{"query_items":true,"a_a_test":false,"auto_generated_refined_query_rules":true,"manual_searchandizing":true,"personalization":true,"filter_items":true,"use_reranker_service_for_search":true,"use_reranker_service_for_browse":true,"use_reranker_service_for_all":false,"custom_autosuggest_ui":false,"disable_test_only_global_rules_search":false,"disable_test_only_global_rules_browse":false,"use_enriched_attributes_as_fuzzy_searchable":false},"feature_variants":{"query_items":"query_items_ctr_enriched_prefix_and_ctr_and_ctr_ss","a_a_test":null,"auto_generated_refined_query_rules":"default_rules","manual_searchandizing":null,"personalization":"default_personalization","filter_items":"filter_items_w_atcs_and_purchases","use_reranker_service_for_search":null,"use_reranker_service_for_browse":null,"use_reranker_service_for_all":null,"custom_autosuggest_ui":null,"disable_test_only_global_rules_search":null,"disable_test_only_global_rules_browse":null,"use_enriched_attributes_as_fuzzy_searchable":null}}}
 
 event: end
-data: {"intent_result_id":"5b64da3b-1b54-4160-902c-828c2fd63a8b","thread_id":"d8522a55-feac-47ea-995a-5c5f3dc8cc52","search_result_count":0}
-
+data: {"intent_result_id":"23d67f56-1a04-4dc9-b4b7-8c57b3b32c8e","search_result_count":2}
 
 ```
 
+Although not illustrated in the example above, each `search_result` event included several suggested products. As implied in the example, the typical response includes events of type `start`, `message`, `search_result`, and `end`. However, the Retrieve by intent API documentation also specifies the following additional event types: `article_reference`, `image_meta`, `recipe_info`, `recipe_instructions`, and `server_error`.
+
+> [!NOTE]
+>
+> You can find a [complete Retrieve by intent API response example here](constructor-retrieve-by-intent-api-response-example.txt). 
